@@ -1,0 +1,200 @@
+/*Breakpoint*/
+$small: "576px";
+$medium: "768px";
+$large: "992px";
+
+* {
+    margin: 0 !important;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dashboard {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "aside"
+        "main"
+        "footer"
+    ;
+
+    grid-template-rows: 100px 100px 1fr 100px;
+
+    header {
+        grid-area: header;
+        background-color: rgb(0, 140, 255);
+        color: white;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+
+            .brand {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+
+                h1 {
+                    font-size: 25px;
+                    font-weight: 800;
+                }
+
+                figure {
+                    width: 80px;
+
+                    img {
+                        border-radius: 50%;
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+            .icon {
+                i {
+                    font-size: 30px;
+                }
+            }
+
+            .menu {
+                display: none;
+            }
+        }
+    }
+
+    aside {
+        grid-area: aside;
+        background-color: rgb(216, 216, 216);
+        text-align: center;
+        padding: 25px;
+    }
+
+    main {
+        grid-area: main;
+        background-color: white;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+
+        .cards-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 120px;
+            overflow: hidden;
+
+            .img-cards {
+                padding: 10px;
+                height: 360px;
+                justify-content: center;
+            }
+        }
+
+        .cards-footer {
+            padding: 50px;
+            text-align: center;
+
+            .btn-vermas {
+                background-color: blue;
+                color: white;
+                width: 15%;
+                border-radius: 20px;
+                margin: 2.5%;
+                padding: 5px 5px 5px 5px;
+            }
+        }
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: rgb(0, 0, 51);
+        text-align: center;
+        color: white;
+        padding: 35px;
+    }
+}
+
+@media (min-width: $small) {
+    .dashboard {
+        grid-template-areas: 
+            "header header header header header"
+            "aside main main main main"
+            "footer footer footer footer footer"
+        ;
+
+        grid-template-rows: 100px 1fr 100px;
+        grid-template-columns: 250px;
+
+        header {
+
+            nav {
+
+                .brand {
+                    figure {
+                        width: 40px;
+                    }
+                }
+                .icon {
+                    display: none;
+                }
+
+                .menu {
+                    display: flex;
+                    list-style: none;
+                    gap: 15px;
+
+                    /*li {
+                        background-color: white;
+                    }*/
+                }
+            }
+        }
+
+        aside {
+            height: 100vh;
+        }
+    }
+}
+
+@media (min-width: $large) {
+    .dashboard {
+        grid-template-areas: 
+            "header aside aside aside aside"
+            "header main main main main"
+            "footer main main main main"
+        ;
+
+        grid-template-rows: 100px 1fr 100px;
+        grid-template-columns: 280px;
+
+        header {
+            height: 100vh;
+
+            nav {
+
+                flex-direction: column;
+                gap: 30px;
+
+                .brand {
+                    figure {
+                        width: 40px;
+                    }
+                }
+                .icon {
+                    display: none;
+                }
+
+                .menu {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

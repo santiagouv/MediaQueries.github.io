@@ -1,0 +1,145 @@
+/*Breakpoint*/
+* {
+  margin: 0 !important;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-areas: "header" "aside" "main" "footer";
+  grid-template-rows: 100px 100px 1fr 100px;
+}
+.dashboard header {
+  grid-area: header;
+  background-color: rgb(0, 140, 255);
+  color: white;
+}
+.dashboard header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.dashboard header nav .brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.dashboard header nav .brand h1 {
+  font-size: 25px;
+  font-weight: 800;
+}
+.dashboard header nav .brand figure {
+  width: 80px;
+}
+.dashboard header nav .brand figure img {
+  border-radius: 50%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.dashboard header nav .icon i {
+  font-size: 30px;
+}
+.dashboard header nav .menu {
+  display: none;
+}
+.dashboard aside {
+  grid-area: aside;
+  background-color: rgb(216, 216, 216);
+  text-align: center;
+  padding: 25px;
+}
+.dashboard main {
+  grid-area: main;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.dashboard main .cards-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  overflow: hidden;
+}
+.dashboard main .cards-header .img-cards {
+  padding: 10px;
+  height: 360px;
+  justify-content: center;
+}
+.dashboard main .cards-footer {
+  padding: 50px;
+  text-align: center;
+}
+.dashboard main .cards-footer .btn-vermas {
+  background-color: blue;
+  color: white;
+  width: 15%;
+  border-radius: 20px;
+  margin: 2.5%;
+  padding: 5px 5px 5px 5px;
+}
+.dashboard footer {
+  grid-area: footer;
+  background-color: rgb(0, 0, 51);
+  text-align: center;
+  color: white;
+  padding: 35px;
+}
+
+@media (min-width: 576px) {
+  .dashboard {
+    grid-template-areas: "header header header header header" "aside main main main main" "footer footer footer footer footer";
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 250px;
+  }
+  .dashboard header nav .brand figure {
+    width: 40px;
+  }
+  .dashboard header nav .icon {
+    display: none;
+  }
+  .dashboard header nav .menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    /*li {
+        background-color: white;
+    }*/
+  }
+  .dashboard aside {
+    height: 100vh;
+  }
+}
+@media (min-width: 992px) {
+  .dashboard {
+    grid-template-areas: "header aside aside aside aside" "header main main main main" "footer main main main main";
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 280px;
+  }
+  .dashboard header {
+    height: 100vh;
+  }
+  .dashboard header nav {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .dashboard header nav .brand figure {
+    width: 40px;
+  }
+  .dashboard header nav .icon {
+    display: none;
+  }
+  .dashboard header nav .menu {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dashboard main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}/*# sourceMappingURL=Style.css.map */
